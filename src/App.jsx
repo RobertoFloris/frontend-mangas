@@ -1,4 +1,5 @@
-import HomePage from "./pages/HomePage";
+import Manga from "./pages/Manga";
+import DetailPage from "./pages/DetailPage";
 import Error404 from "./pages/Error404";
 import DefaultLayouts from "./layouts/DefaultLayouts";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -10,7 +11,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayouts />}>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/mangas" element={<Manga />} />
+            <Route path="/mangas/:id" element={<DetailPage />} />
             <Route path="*" element={<Error404 />} />
           </Route>
         </Routes>

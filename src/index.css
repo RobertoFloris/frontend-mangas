@@ -1,0 +1,8 @@
+.manga-image {
+  aspect-ratio: 3/4;
+  width: 100%;
+}
+
+.manga-details {
+  height: 500px;
+}

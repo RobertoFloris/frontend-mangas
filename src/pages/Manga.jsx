@@ -2,7 +2,7 @@ import { useGlobalContext } from "../context/GlobalContext"
 import { useEffect } from "react";
 import MangaCard from "../components/MangaCard";
 
-const HomePage = () => {
+const Manga = () => {
 
   const { fetchMangas, mangas } = useGlobalContext();
 
@@ -22,11 +22,11 @@ const HomePage = () => {
     <>
       <h1>Manga disponibili</h1>
 
-      <div className="row row-cols-3">
+      <div className="row row-cols-4">
         {renderMangas()}
       </div>
     </>
   )
 }
 
-export default HomePage
+export default Manga

@@ -7,6 +7,7 @@ const GlobalProvider = ({ children }) => {
 
   const api_url = import.meta.env.VITE_API_URL;
   const [mangas, setMangas] = useState([]);
+  const [manga, setManga] = useState({});
 
   const fetchMangas = () => {
     axios.get(api_url)
@@ -16,9 +17,19 @@ const GlobalProvider = ({ children }) => {
       .catch(err => console.log(err));
   }
 
+  const fetchManga = (id) => {
+    axios.get(`${api_url}/${id}`)
+      .then(res => {
+        setManga(res.data.data);
+      })
+      .catch(err => console.log(err));
+  }
+
   const value = {
     fetchMangas,
-    mangas
+    mangas,
+    fetchManga,
+    manga
   }
 
   return (
