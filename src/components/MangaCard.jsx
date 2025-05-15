@@ -2,23 +2,24 @@ import { Link } from "react-router-dom"
 
 const MangaCard = ({ manga }) => {
   const { id, title, author, image } = manga
+
   return (
-    <div>
-      <div className="card mb-4">
+    <div className="manga-card">
+      <Link to={`/mangas/${id}`} className="manga-link">
+        <img
+          className="manga-image"
+          src={`http://localhost:8000/storage/${image}`}
+          alt={title}
+        />
+      </Link>
 
-        <Link to={`mangas/${id}`}>
-          <img className="card-image-top manga-image" src={`http://localhost:8000/storage/${image}`} alt={title} />
+      <div className="manga-info">
+        <h3 className="manga-title">{title}</h3>
+        <p className="manga-author"><i>{author}</i></p>
+
+        <Link to={`/mangas/${id}`} className="manga-more">
+          Maggiori informazioni →
         </Link>
-
-        <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <address><i>{author}</i></address>
-
-          <div>
-            <Link to={`mangas/${id}`}>Maggiori informazioni</Link>
-          </div>
-
-        </div>
       </div>
     </div>
   )

@@ -6,3 +6,244 @@
 .manga-details {
   height: 500px;
 }
+
+body {
+  background-color: #0B1622;
+  color: #ffffff;
+}
+
+header {
+  width: 100%;
+  height: 130px;
+  background-color: #0B1622;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid gray;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.logo span {
+  font-size: 28px;
+  color: #FFA500;
+  text-shadow: 0 0 5px #FFA500, 0 0 10px #FF4500;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.homepage {
+  width: 100%;
+  height: calc(100vh - 130px);
+  background-image: url("public/img/body.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-message {
+  text-align: center;
+  color: #ffffff;
+  animation: fadeSlideIn 1.8s ease-out;
+  background-color: rgba(11, 22, 34, 0.75);
+  padding: 60px 80px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px #FFA500;
+  max-width: 900px;
+}
+
+.welcome-message h1 {
+  font-size: 64px;
+  /* molto più grande */
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.welcome-message h1 span {
+  color: #FFA500;
+  text-shadow: 0 0 10px #FFA500, 0 0 20px #FF4500;
+}
+
+.cta-link {
+  font-size: 28px;
+  /* più grande */
+  color: #FFA500;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.cta-link:hover {
+  color: #FF4500;
+  text-shadow: 0 0 8px #FF4500, 0 0 15px #FF6347;
+}
+
+/* Animation keyframes */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2.title {
+  color: #FFA500;
+  text-shadow: 0 0 10px #FFA500, 0 0 20px #FF4500;
+}
+
+.manga-card {
+  background-color: #20272e;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+
+.manga-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(255, 165, 0, 0.4);
+}
+
+.manga-link {
+  display: block;
+  overflow: hidden;
+}
+
+.manga-image {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.manga-card:hover .manga-image {
+  transform: scale(1.05);
+}
+
+.manga-info {
+  padding: 16px 20px;
+}
+
+.manga-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #FFA500;
+}
+
+.manga-author {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.manga-more {
+  display: inline-block;
+  margin-top: 8px;
+  color: #FFA500;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.manga-more:hover {
+  color: #FF4500;
+  text-shadow: 0 0 8px #FF4500;
+}
+
+.detail-container {
+  padding: 40px;
+  background-color: #0B1622;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.detail-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
+}
+
+.detail-image {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 165, 0, 0.3);
+}
+
+.detail-text {
+  flex: 1;
+}
+
+.detail-title {
+  font-size: 36px;
+  color: #FFA500;
+  margin-bottom: 10px;
+}
+
+.detail-author {
+  font-size: 20px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.detail-description {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.type-description {
+  font-size: 14px;
+  color: #999;
+}
+
+.detail-back-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.detail-back-link a {
+  color: #FFA500;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.detail-back-link a:hover {
+  color: #FF4500;
+  text-shadow: 0 0 6px #FF4500;
+}

@@ -4,12 +4,14 @@ import Error404 from "./pages/Error404";
 import DefaultLayouts from "./layouts/DefaultLayouts";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GlobalProvider } from "./context/GlobalContext";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
   return (
     <GlobalProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route element={<DefaultLayouts />}>
             <Route path="/mangas" element={<Manga />} />
             <Route path="/mangas/:id" element={<DetailPage />} />
