@@ -17,9 +17,10 @@ const Manga = () => {
   }
 
   useEffect(() => {
-    fetchMangas;
+    fetchMangas();
     window.scrollTo({ top: 0 });
   }, []);
+
 
   return (
     <>

@@ -6,7 +6,7 @@ const Header = () => {
       <div className="container d-flex align-items-center h-100">
         <div className="logo">
           <Link to={`/`}>
-            <img src="/public/img/naruto-5818259_640.png" alt="Logo" />
+            <img src="/img/naruto-5818259_640.png" alt="Logo" />
             <span>BooleAnime</span>
           </Link>
         </div>
