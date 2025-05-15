@@ -4,7 +4,7 @@ import MangaCard from "../components/MangaCard";
 
 const Manga = () => {
 
-  const { fetchMangas, mangas } = useGlobalContext();
+  const { fetchMangas, mangas, loading } = useGlobalContext();
 
   const renderMangas = () => {
     return mangas.map(manga => {
@@ -20,6 +20,14 @@ const Manga = () => {
     fetchMangas();
     window.scrollTo({ top: 0 });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="c-loader d-flex w-100 justify-content-center align-items-center">
+        <div className="loader"></div>
+      </div>
+    )
+  }
 
 
   return (

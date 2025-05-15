@@ -4,12 +4,20 @@ import { useGlobalContext } from "../context/GlobalContext";
 
 const DetailPage = () => {
   const { id } = useParams();
-  const { manga, fetchManga } = useGlobalContext();
+  const { manga, fetchManga, loading } = useGlobalContext();
 
   useEffect(() => {
     fetchManga(id);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0 });
   }, [id]);
+
+  if (loading) {
+    return (
+      <div className="c-loader d-flex w-100 justify-content-center align-items-center">
+        <div className="loader"></div>
+      </div>
+    )
+  }
 
 
   return (
