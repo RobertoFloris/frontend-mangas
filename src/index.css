@@ -8,10 +8,97 @@ header {
   height: 130px;
   background-color: #0B1622;
   color: white;
-  display: flex;
-  align-items: center;
   border-bottom: 1px solid gray;
 }
+
+.main-header {
+  width: 100%;
+  background-color: #0B1622;
+  color: white;
+  border-bottom: 1px solid gray;
+  padding: 10px 0;
+  position: relative;
+  z-index: 999;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #FFA500;
+  display: none;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hamburger-btn:hover {
+  color: #FF4500;
+}
+
+.filters-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 1199px) {
+  .hamburger-btn {
+    display: block;
+  }
+
+  @media (max-width: 1199px) {
+    .hamburger-btn {
+      display: block;
+    }
+
+    .filters-wrapper {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #0B1622;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 20px 0;
+      border-top: 1px solid gray;
+
+      display: none;
+      z-index: 1000;
+
+      animation: slideDown 0.3s ease-in-out forwards;
+    }
+
+    .filters-wrapper.open {
+      display: flex;
+    }
+  }
+
+  .manga-wrapper {
+    transition: margin-top 0.3s ease;
+  }
+
+
+
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.manga-card-wrapper {
+  width: 100%;
+  max-width: 300px;
+}
+
+
 
 .logo {
   display: flex;
@@ -112,6 +199,7 @@ h2.title {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: #fff;
+  max-width: 300px;
 }
 
 .manga-card:hover {

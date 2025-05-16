@@ -9,17 +9,33 @@ const GlobalProvider = ({ children }) => {
   const [mangas, setMangas] = useState([]);
   const [manga, setManga] = useState({});
   const [loading, setLoading] = useState(false);
+  const [title, setTitle] = useState("");
+  const [type_id, setType_id] = useState("");
+  const [order, setOrder] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleSearchChange = (e) => setTitle(e.target.value);
+  const handleTypeChange = (e) => setType_id(e.target.value);
+  const handleOrderChange = (e) => setOrder(e.target.value);
 
 
-  const fetchMangas = () => {
+
+  const fetchMangas = (filters = {}) => {
     setLoading(true);
-    axios.get(api_url)
+
+    const params = new URLSearchParams(filters).toString();
+
+    axios.get(`${api_url}?${params}`)
       .then(res => {
         setMangas(res.data.data);
         setLoading(false);
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        setLoading(false);
+      });
   }
+
 
   const fetchManga = (id) => {
     setLoading(true);
@@ -36,7 +52,15 @@ const GlobalProvider = ({ children }) => {
     mangas,
     fetchManga,
     manga,
-    loading
+    loading,
+    title,
+    type_id,
+    order,
+    handleOrderChange,
+    handleSearchChange,
+    handleTypeChange,
+    menuOpen,
+    setMenuOpen
   }
 
   return (
