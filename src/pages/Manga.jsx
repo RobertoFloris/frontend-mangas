@@ -34,7 +34,7 @@ const Manga = () => {
   return (
     <>
       <HeaderResults />
-      <div style={{ marginTop: menuOpen ? "200px" : "0" }}>
+      <div style={{ marginTop: menuOpen ? "250px" : "0" }}>
         <h2 className="title mt-5 mb-5">Manga disponibili</h2>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-5 mb-5">
           {mangas.map((manga) => (
