@@ -18,6 +18,11 @@ const GlobalProvider = ({ children }) => {
   const handleTypeChange = (e) => setType_id(e.target.value);
   const handleOrderChange = (e) => setOrder(e.target.value);
 
+  const resetFilter = () => {
+    setTitle("");
+    setOrder("");
+    setType_id("");
+  }
 
 
   const fetchMangas = (filters = {}) => {
@@ -60,7 +65,8 @@ const GlobalProvider = ({ children }) => {
     handleSearchChange,
     handleTypeChange,
     menuOpen,
-    setMenuOpen
+    setMenuOpen,
+    resetFilter
   }
 
   return (

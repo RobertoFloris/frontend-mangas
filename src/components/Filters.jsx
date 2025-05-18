@@ -2,7 +2,7 @@ import { useGlobalContext } from "../context/GlobalContext";
 
 const Filters = () => {
 
-  const { title, type_id, order, handleOrderChange, handleSearchChange, handleTypeChange } = useGlobalContext();
+  const { title, type_id, order, handleOrderChange, handleSearchChange, handleTypeChange, resetFilter } = useGlobalContext();
 
   return (
     <>
@@ -41,6 +41,10 @@ const Filters = () => {
         <option value="3">Ordine: Più datato</option>
         <option value="4">Ordine: Ultime aggiunte</option>
       </select>
+
+      <div className="reset btn btn-outline-danger" onClick={resetFilter}>
+        Pulisci
+      </div>
     </>
   )
 }

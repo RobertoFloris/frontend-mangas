@@ -189,7 +189,7 @@ header {
 
 h2.title {
   color: #FFA500;
-  text-shadow: 0 0 10px #FFA500, 0 0 20px #FF4500;
+  text-shadow: 0 0 10px #FFA500, 0 0 20px lab(57.57% 67.8 68.97);
 }
 
 .manga-card {
@@ -343,4 +343,14 @@ h2.title {
   100% {
     transform: rotate(1turn)
   }
+}
+
+.reset.btn-outline-danger {
+  color: #FFA500;
+  border-color: #FFA500;
+}
+
+.reset.btn-outline-danger:hover {
+  background-color: #FFA500;
+  color: #FF4500;
 }
