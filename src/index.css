@@ -354,3 +354,8 @@ h2.title {
   background-color: #FFA500;
   color: #FF4500;
 }
+
+footer {
+  height: 130px;
+  background-color: #20272e;
+}

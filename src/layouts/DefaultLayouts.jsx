@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import Footer from "../components/Footer"
 
 const DefaultLayouts = () => {
   return (
@@ -6,6 +7,7 @@ const DefaultLayouts = () => {
       <main className="container">
         <Outlet />
       </main>
+      <Footer />
 
     </>
   )
